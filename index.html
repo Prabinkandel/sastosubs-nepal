@@ -1593,8 +1593,25 @@
   function pick(a){ return a[Math.floor(Math.random()*a.length)]; }
   var LABELS=["Netflix 4K (1 Month)", "Netflix 4K (3 Months)", "Netflix 4K (6 Months)", "Netflix 4K (1 Year)", "Spotify Premium (1 Month)", "Spotify Premium (3 Months)", "Spotify Premium (6 Months)", "Spotify Premium (1 Year)", "ChatGPT Plus (With Warranty \u00b7 1 Month)", "ChatGPT Plus (Without Warranty \u00b7 1 Month)", "Prime Video (1 Month)", "Prime Video (6 Months)", "ElevenLabs Starter (1 Month)", "Claude AI API Access (2M tokens)", "Claude AI API Access (10M tokens)", "Claude AI API Access (50M tokens)", "Claude AI API Access (100M tokens)", "Gemini AI Pro (3 Months)", "Gemini AI Pro (18 Months)", "Gemini Plus (6 Months)", "Muse AI (1 Billion Tokens \u2014 No Warranty)", "Muse AI (1 Billion Tokens \u2014 Full Warranty)", "Muse AI (30 Billion Tokens)", "CapCut Pro (1 Device (Mobile Only) \u00b7 1 Month)", "CapCut Pro (2 Devices PC \u00b7 1 Month)", "Canva Edu (1 Year)", "Microsoft Office + Windows 10/11 Pro (Lifetime)", ".com Domain (1 Year)"];
   function label(){ return pick(LABELS); }
+  function emojiFor(t){
+    t=t.toLowerCase();
+    if(t.indexOf('netflix')===0) return '\uD83C\uDFAC';
+    if(t.indexOf('spotify')===0) return '\uD83C\uDFB5';
+    if(t.indexOf('prime')===0) return '\uD83D\uDCFA';
+    if(t.indexOf('chatgpt')===0) return '\uD83E\uDD16';
+    if(t.indexOf('elevenlabs')===0) return '\uD83C\uDF99\uFE0F';
+    if(t.indexOf('claude')===0) return '\uD83E\uDDE0';
+    if(t.indexOf('gemini')===0) return '\u2728';
+    if(t.indexOf('muse')===0) return '\uD83E\uDE84';
+    if(t.indexOf('capcut')===0) return '\u2702\uFE0F';
+    if(t.indexOf('canva')===0) return '\uD83C\uDF93';
+    if(t.indexOf('microsoft')===0) return '\uD83D\uDCBC';
+    if(t.indexOf('.com')===0) return '\uD83C\uDF10';
+    return '\uD83D\uDED2';
+  }
   function show(){
-    el.innerHTML='<button class="ss-proof-x" aria-label="Close">\u00D7</button><b>'+pick(NAMES)+'</b> from '+pick(CITIES)+' just ordered <b>'+label()+'</b><span class="ss-proof-time">'+pick(TIMES)+' \u00B7 Verified order</span>';
+    var item=label();
+    el.innerHTML='<button class="ss-proof-x" aria-label="Close">\u00D7</button><b>'+pick(NAMES)+'</b> from '+pick(CITIES)+' just ordered <b>'+emojiFor(item)+' '+item+'</b><span class="ss-proof-time">'+pick(TIMES)+' \u00B7 Verified order</span>';
     el.querySelector('.ss-proof-x').addEventListener('click', function(){
       el.classList.remove('show');
       try{ localStorage.setItem('ss_proof_off','1'); }catch(e){}
