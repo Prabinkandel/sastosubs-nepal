@@ -2,7 +2,7 @@
 
 Live site: https://sastosubs-nepal.vercel.app/
 
-Premium digital subscriptions in Nepal — Netflix, Spotify, ChatGPT Plus, AI tools and more, paid in Nepali rupees and ordered on WhatsApp (+977 9840661406).
+Premium digital subscriptions in Nepal — Netflix, Spotify, ChatGPT Plus, AI tools and more, paid in Nepali rupees and ordered on WhatsApp (+977 970-5985657).
 
 ## Backlink kit (ready to paste)
 
