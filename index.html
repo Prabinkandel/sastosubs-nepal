@@ -1591,10 +1591,8 @@
   var TIMES=['2 min ago','4 min ago','5 min ago','8 min ago','11 min ago','15 min ago'];
   var el=document.getElementById('ssProof');
   function pick(a){ return a[Math.floor(Math.random()*a.length)]; }
-  function label(){
-    var p=pick(PRODUCTS); var plan=p.plans&&p.plans.length?pick(p.plans):null;
-    return plan ? (p.name+' ('+plan.label+')') : p.name;
-  }
+  var LABELS=["Netflix 4K (1 Month)", "Netflix 4K (3 Months)", "Netflix 4K (6 Months)", "Netflix 4K (1 Year)", "Spotify Premium (1 Month)", "Spotify Premium (3 Months)", "Spotify Premium (6 Months)", "Spotify Premium (1 Year)", "ChatGPT Plus (With Warranty \u00b7 1 Month)", "ChatGPT Plus (Without Warranty \u00b7 1 Month)", "Prime Video (1 Month)", "Prime Video (6 Months)", "ElevenLabs Starter (1 Month)", "Claude AI API Access (2M tokens)", "Claude AI API Access (10M tokens)", "Claude AI API Access (50M tokens)", "Claude AI API Access (100M tokens)", "Gemini AI Pro (3 Months)", "Gemini AI Pro (18 Months)", "Gemini Plus (6 Months)", "Muse AI (1 Billion Tokens \u2014 No Warranty)", "Muse AI (1 Billion Tokens \u2014 Full Warranty)", "Muse AI (30 Billion Tokens)", "CapCut Pro (1 Device (Mobile Only) \u00b7 1 Month)", "CapCut Pro (2 Devices PC \u00b7 1 Month)", "Canva Edu (1 Year)", "Microsoft Office + Windows 10/11 Pro (Lifetime)", ".com Domain (1 Year)"];
+  function label(){ return pick(LABELS); }
   function show(){
     el.innerHTML='<button class="ss-proof-x" aria-label="Close">\u00D7</button><b>'+pick(NAMES)+'</b> from '+pick(CITIES)+' just ordered <b>'+label()+'</b><span class="ss-proof-time">'+pick(TIMES)+' \u00B7 Verified order</span>';
     el.querySelector('.ss-proof-x').addEventListener('click', function(){
