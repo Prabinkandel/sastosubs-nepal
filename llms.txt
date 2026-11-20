@@ -16,7 +16,7 @@
 ## Products and prices (NPR)
 
 - Netflix 4K: from Rs 299 — plans: 1 Month Rs 299; 3 Months Rs 1,000; 6 Months Rs 1,975; 1 Year Rs 3,950 (Streaming)
-- Spotify Premium: from Rs 300 — plans: 1 Month Rs 300; 3 Months Rs 350; 6 Months Rs 1,600; 1 Year Rs 2,900 (Streaming)
+- Spotify Premium: from Rs 300 — plans: 1 Month Rs 300; 3 Months Rs 350; 3 Months (Pre-activated) Rs 399; 6 Months Rs 1,600; 1 Year Rs 2,900 (Streaming)
 - ChatGPT Plus: from Rs 650 — plans: With Warranty · 1 Month Rs 1,399; Without Warranty · 1 Month Rs 650 (AI Tools)
 - Prime Video: from Rs 99 — plans: 1 Month Rs 99; 6 Months Rs 400 (Streaming)
 - ElevenLabs Starter: from Rs 300 — plans: 1 Month Rs 300 (AI Tools)
