@@ -815,8 +815,24 @@
   }
 
 </style>
+
+<style>
+.ticker{background:linear-gradient(90deg,#B30D15,#E8262D 55%,#B30D15);color:#fff;overflow:hidden;position:relative;z-index:91}
+.ticker-in{max-width:1240px;margin:0 auto;height:38px;display:flex;align-items:center;justify-content:center;padding:0 14px}
+.ticker-msg{font-size:13.5px;font-weight:700;letter-spacing:.2px;text-align:center;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.ticker-msg b{color:#FFD34D;font-weight:800}
+.ticker-msg.swap{animation:tickIn .45s ease}
+@keyframes tickIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+@media (max-width:480px){.ticker-msg{font-size:12.5px}}
+@media (prefers-reduced-motion:reduce){.ticker-msg.swap{animation:none}}
+</style>
 </head>
 <body>
+
+
+<div class="ticker" role="region" aria-label="Latest offers">
+  <div class="ticker-in"><span class="ticker-msg" id="tickerMsg">🔥 <b>SUPER SALE</b> — Netflix 4K · 1 Month at just <b>Rs 299</b></span></div>
+</div>
 
 <div class="helpbar">
   <div class="helpbar-in">
@@ -1604,6 +1620,30 @@
     setTimeout(loop, 55000 + Math.random()*40000);
   }
   setTimeout(loop, 6000);
+})();
+</script>
+
+<script>
+(function(){
+  var msgs = [
+    '🔥 <b>SUPER SALE</b> — Netflix 4K · 1 Month at just <b>Rs 299</b>',
+    '🎵 Spotify Premium from <b>Rs 300</b> · 3 Months Pre-activated <b>Rs 399</b>',
+    '🤖 ChatGPT Plus from <b>Rs 650</b> · With Warranty <b>Rs 1,399</b>',
+    '🌐 .com Domain · 1 Year at just <b>Rs 399</b>',
+    '🎬 CapCut Pro · 2 Devices — <b>Rs 325</b>/month',
+    '🦉 Super Duolingo · 12 Months — <b>Rs 350</b>',
+    '⚡ Same-day activation · Pay in Nepali rupees · Order on WhatsApp'
+  ];
+  var el = document.getElementById('tickerMsg');
+  if(!el) return;
+  var i = 0;
+  setInterval(function(){
+    i = (i + 1) % msgs.length;
+    el.classList.remove('swap');
+    void el.offsetWidth;
+    el.innerHTML = msgs[i];
+    el.classList.add('swap');
+  }, 3500);
 })();
 </script>
 </body>
