@@ -63,6 +63,7 @@
     --shadow-up:0 18px 36px -18px rgba(23,20,16,.25);
     --font:"Manrope",system-ui,-apple-system,"Segoe UI",sans-serif;
     --header-h:56px;
+    --strip-h:48px;
   }
   /* dark variant: the same light theme inverted cleanly */
   @media (prefers-color-scheme: dark){
@@ -112,7 +113,7 @@
   @media (min-width:1024px){ .wrap{padding:0 32px} }
 
   /* ============ help strip — slim single-row, organized ============ */
-  .helpbar{background:var(--red); color:#fff}
+  .helpbar{background:var(--red); color:#fff; position:sticky; top:0; z-index:90}
   .helpbar-in{
     max-width:1240px; margin:0 auto;
     display:flex; align-items:center; justify-content:space-between; gap:8px;
@@ -155,12 +156,13 @@
 
   /* ============ header ============ */
   .topbar{
-    position:sticky; top:0; z-index:80;
+    position:sticky; top:var(--strip-h); z-index:80;
     background:color-mix(in srgb, var(--bg) 92%, transparent);
     -webkit-backdrop-filter:blur(12px); backdrop-filter:blur(12px);
     border-bottom:1px solid var(--line);
   }
   .topbar-in{display:flex; align-items:center; gap:14px; height:var(--header-h)}
+  @media (min-width:640px){ :root{--strip-h:52px} }
   @media (min-width:1024px){ :root{--header-h:64px} }
   .brand{display:flex; align-items:center; gap:9px; text-decoration:none; min-height:44px; flex:none}
   .brand-mark{
@@ -256,7 +258,7 @@
   .hero-note{font-size:12.5px; color:var(--faint); font-weight:600}
 
   /* ============ sections ============ */
-  section.block{padding:40px 0 6px; scroll-margin-top:calc(var(--header-h) + 12px)}
+  section.block{padding:40px 0 6px; scroll-margin-top:calc(var(--header-h) + var(--strip-h) + 12px)}
   @media (min-width:1024px){ section.block{padding:56px 0 8px} }
   .sec-head{margin-bottom:20px}
   @media (min-width:1024px){ .sec-head{margin-bottom:26px} }
@@ -266,7 +268,7 @@
 
   /* ============ store toolbar (sticky) ============ */
   .store-tools{
-    position:sticky; top:var(--header-h); z-index:60;
+    position:sticky; top:calc(var(--header-h) + var(--strip-h)); z-index:60;
     margin:0 -12px; padding:10px 12px 12px;
     /* fully opaque: card content scrolling underneath must never show
        through or look half-clipped behind the search + filter bar */
@@ -277,7 +279,7 @@
   @media (min-width:640px){ .store-tools{margin:0 -24px; padding-left:24px; padding-right:24px} }
   @media (min-width:1024px){ .store-tools{margin:0 -32px; padding-left:32px; padding-right:32px} }
   .search{position:relative; display:block}
-  .search input{scroll-margin-top:calc(var(--header-h) + 76px); scroll-margin-bottom:96px;
+  .search input{scroll-margin-top:calc(var(--header-h) + var(--strip-h) + 76px); scroll-margin-bottom:96px;
     width:100%; background:var(--card); border:1px solid var(--line-strong); color:var(--ink);
     padding:12px 44px 12px 44px; font:inherit; font-size:16px; min-height:50px; border-radius:12px;
     appearance:none; -webkit-appearance:none;
@@ -957,13 +959,14 @@
     <style>
       .seo-intro{color:var(--muted);max-width:65ch;line-height:1.65}
       .seo-tablewrap{overflow-x:auto;border:1px solid var(--line);border-radius:14px;background:var(--card)}
-      table.seo-prices{width:100%;border-collapse:collapse;min-width:520px}
+      table.seo-prices{width:100%;border-collapse:collapse}
       table.seo-prices th,table.seo-prices td{padding:.7rem .9rem;text-align:left;border-bottom:1px solid var(--line);vertical-align:top;line-height:1.5}
       table.seo-prices th{font-size:.75rem;text-transform:uppercase;letter-spacing:.08em;color:var(--muted)}
       table.seo-prices td{color:var(--muted)}
       table.seo-prices .sp-name{color:var(--ink);font-weight:700;white-space:nowrap}
       table.seo-prices .sp-from{color:var(--ink);font-weight:800;white-space:nowrap}
       .seo-note{color:var(--muted);font-size:.9rem;margin-top:.8rem}
+      @media (max-width:640px){ table.seo-prices th,table.seo-prices td{padding:.55rem .6rem;font-size:.92rem} table.seo-prices .sp-name{white-space:normal} }
     </style>
   </section>
   <section class="block" id="faq" aria-labelledby="faq-h">
