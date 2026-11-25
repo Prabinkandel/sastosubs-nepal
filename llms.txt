@@ -4,7 +4,7 @@
 
 ## Store facts
 
-- Website: https://sastosubs-nepal.vercel.app/
+- Website: https://sastosubsnepal.tech/
 - Location: Pokhara, Kaski, Nepal (online store — delivers all over Nepal)
 - Country served: Nepal
 - Currency: NPR (Nepali Rupees)

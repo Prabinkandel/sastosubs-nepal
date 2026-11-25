@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://sastosubs-nepal.vercel.app/sitemap.xml
+Sitemap: https://sastosubsnepal.tech/sitemap.xml
