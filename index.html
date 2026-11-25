@@ -1807,5 +1807,17 @@
   window.addEventListener("scroll", onScroll, { passive: true });
 })();
 </script>
+
+<style id="preview-css">
+  .card{border-radius:16px}
+  .card-hero{grid-column:auto; flex-direction:column}
+  .photo{margin:12px 12px 0; width:calc(100% - 24px); aspect-ratio:1/1; max-height:none; height:auto; border-radius:12px; flex:none}
+  .card-hero .photo{width:calc(100% - 24px); max-width:none; height:auto; min-height:0; aspect-ratio:1/1; max-height:none; border-radius:12px}
+  .photo img{max-width:68%; max-height:62%}
+  .card h3{font-size:16px}
+  .price-row .now{font-size:20px}
+  .order-btn.choose{background:#157347; border-color:transparent; color:#fff; min-height:48px}
+  .order-btn.choose:active{background:#0F5C39}
+</style>
 </body>
 </html>
