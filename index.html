@@ -1383,7 +1383,7 @@
         main.appendChild(ob);
       }
       if (i === currentIdx && !pl.oos){
-        var cur = document.createElement("span"); cur.className = "v-current"; cur.textContent = "Selected on card";
+        var cur = document.createElement("span"); cur.className = "v-current"; cur.textContent = "Cheapest";
         main.appendChild(cur);
       }
       row.appendChild(main);
@@ -1711,6 +1711,8 @@
   .v-main{display:flex; flex-direction:column; gap:2px}
   .v-badge{align-self:flex-start}
   .sheet-foot{border-top:1px solid var(--line)}
+  .card-foot{border-top:1px solid var(--line)}
+  .card-foot::before,.card-foot::after{display:none; content:none}
 </style>
 </body>
 </html>
